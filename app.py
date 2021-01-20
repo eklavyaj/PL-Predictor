@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import pickle as p
 import streamlit as st
-
+import sklearn
 
 def desc(HomeTeam, AwayTeam, winner):
     positions = pd.read_csv('csv_files/final_positions.csv')
