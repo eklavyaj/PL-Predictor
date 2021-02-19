@@ -143,15 +143,15 @@ def main():
     with open('pickle_files/allteams.pickle', 'rb') as f:
         a = p.load(f)
 
-    all_teams = list(a.keys())
+    all_teams = sorted(list(a.keys()))
 
     # if choice == 'Predictor':
     st.subheader('Enter Match Details')
 
-    hteam = st.selectbox('Select Home Team', all_teams)
+    hteam = st.selectbox('Select Home Team', all_teams, index = 0)
 
-    all_teams2 = list(set(all_teams)- set(hteam))
-    ateam = st.selectbox('Select Away Team', all_teams2)
+    all_teams2 = sorted(list(set(all_teams)- set(hteam)))
+    ateam = st.selectbox('Select Away Team', all_teams2, index = 1)
 
     half_score = st.selectbox('Status at Half Time', ['Home Team', 'Away Team', 'Draw'])
     half_score = half_score[0]
